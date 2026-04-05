@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lamb Recipes — Alder Creek Farm</title>
+  <meta name="description" content="Recipes for cooking Ontario lamb — rack of lamb, leg of lamb, lamb chops and more. Farm-tested, family-approved." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Rye&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="topbar-mount"></div>
+  <div id="header-mount"></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">From Our Kitchen</p>
+      <h1 class="page-hero-title">Recipes</h1>
+    </div>
+  </div>
+
+  <section class="section recipes-index">
+    <div class="container">
+      <div class="section-header centered">
+        <p class="section-eyebrow">Cook with Confidence</p>
+        <h2 class="section-heading">Great Lamb Deserves Great Recipes.</h2>
+        <p class="section-intro">Whether it's your first time cooking lamb or your hundredth, these recipes make the most of every cut.</p>
+      </div>
+
+      <!-- Filter tags -->
+      <div class="recipe-filters">
+        <button class="filter-btn active" data-filter="all">All Recipes</button>
+        <button class="filter-btn" data-filter="rack">Rack of Lamb</button>
+        <button class="filter-btn" data-filter="leg">Leg of Lamb</button>
+        <button class="filter-btn" data-filter="chops">Chops</button>
+        <button class="filter-btn" data-filter="sausage">Sausage</button>
+        <button class="filter-btn" data-filter="ground">Ground Lamb</button>
+      </div>
+
+      <div class="recipe-cards-grid recipe-cards-grid--index">
+        <a href="/recipes/herb-rack-of-lamb.html" class="recipe-card" data-cut="rack">
+          <div class="recipe-card-image rack-recipe-img"></div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Rack of Lamb</span>
+            <h3>Herb-Crusted Rack of Lamb</h3>
+            <p>A golden crust of rosemary, thyme, and garlic pressed onto a perfectly seared rack.</p>
+            <span class="recipe-meta">45 min &bull; Serves 4 &bull; Intermediate</span>
+          </div>
+        </a>
+        <a href="/recipes/slow-roasted-leg-of-lamb.html" class="recipe-card" data-cut="leg">
+          <div class="recipe-card-image leg-recipe-img"></div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Leg of Lamb</span>
+            <h3>Slow-Roasted Leg of Lamb</h3>
+            <p>Low and slow with garlic, lemon, and oregano. Tender enough to pull apart.</p>
+            <span class="recipe-meta">4 hrs &bull; Serves 6&ndash;8 &bull; Easy</span>
+          </div>
+        </a>
+        <a href="/recipes/lamb-chop-pan-sauce.html" class="recipe-card" data-cut="chops">
+          <div class="recipe-card-image chop-recipe-img"></div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Loin Chops</span>
+            <h3>Pan-Seared Lamb Chops with Red Wine Sauce</h3>
+            <p>Eight minutes in a cast iron pan. A red wine reduction that tastes like you spent all day on it.</p>
+            <span class="recipe-meta">25 min &bull; Serves 2 &bull; Easy</span>
+          </div>
+        </a>
+        <a href="#" class="recipe-card coming-soon" data-cut="sausage">
+          <div class="recipe-card-image sausage-recipe-img"></div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Honey Garlic Sausage</span>
+            <h3>Sausage &amp; White Bean Stew</h3>
+            <p>A hearty one-pot stew with our honey garlic sausage, white beans, and braised greens.</p>
+            <span class="recipe-meta">Coming Soon</span>
+          </div>
+        </a>
+        <a href="#" class="recipe-card coming-soon" data-cut="ground">
+          <div class="recipe-card-image ground-recipe-img"></div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Ground Lamb</span>
+            <h3>Lamb Kofta with Tzatziki</h3>
+            <p>Spiced ground lamb on skewers, grilled and served with homemade tzatziki and flatbread.</p>
+            <span class="recipe-meta">Coming Soon</span>
+          </div>
+        </a>
+        <a href="#" class="recipe-card coming-soon" data-cut="leg">
+          <div class="recipe-card-image shank-recipe-img"></div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Lamb Shanks</span>
+            <h3>Braised Lamb Shanks with Gremolata</h3>
+            <p>Braised for three hours until the meat falls from the bone. Finished with lemon gremolata.</p>
+            <span class="recipe-meta">Coming Soon</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section recipe-cta-section">
+    <div class="container">
+      <div class="recipe-cta-box">
+        <p class="section-eyebrow">Order Direct</p>
+        <h2 class="section-heading">Ready to Cook?</h2>
+        <p>Get the freshest Ontario lamb delivered right from our farm. Order individual cuts or stock the freezer with a half or whole lamb.</p>
+        <a href="/pricing.html" class="btn btn-primary">View Pricing</a>
+        <a href="/contact.html" class="btn btn-outline">Place an Order</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-mount"></div>
+  <script src="/components.js"></script>
+  <script src="/main.js"></script>
+  <script>
+    // Recipe filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.recipe-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.cut === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
