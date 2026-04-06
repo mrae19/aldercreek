@@ -47,6 +47,29 @@ module.exports = async function handler(req, res) {
       return res.status(500).json({ error: 'Failed to send message. Please try again.' });
     }
 
+    // Save contact to Resend audience
+    const nameParts = name.trim().split(' ');
+    const firstName = nameParts[0];
+    const lastName = nameParts.slice(1).join(' ') || '';
+
+    await fetch('https://api.resend.com/contacts', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        first_name: firstName,
+        last_name: lastName,
+        unsubscribed: false,
+        properties: [
+          { key: 'phone', value: phone || '' },
+          { key: 'interest', value: interestLabel },
+        ],
+      }),
+    }).catch(err => console.error('Contact save error:', err));
+
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Handler error:', err);
