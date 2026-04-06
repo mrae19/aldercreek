@@ -52,7 +52,7 @@ module.exports = async function handler(req, res) {
     const firstName = nameParts[0];
     const lastName = nameParts.slice(1).join(' ') || '';
 
-    await fetch('https://api.resend.com/contacts', {
+    const contactRes = await fetch('https://api.resend.com/contacts', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
@@ -63,12 +63,11 @@ module.exports = async function handler(req, res) {
         first_name: firstName,
         last_name: lastName,
         unsubscribed: false,
-        properties: [
-          { key: 'phone', value: phone || '' },
-          { key: 'interest', value: interestLabel },
-        ],
       }),
-    }).catch(err => console.error('Contact save error:', err));
+    });
+
+    const contactData = await contactRes.json();
+    console.log('Contact API status:', contactRes.status, JSON.stringify(contactData));
 
     return res.status(200).json({ success: true });
   } catch (err) {
