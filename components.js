@@ -104,8 +104,14 @@ window.addEventListener('scroll', () => {
 // Mobile nav toggle
 document.getElementById('nav-toggle').addEventListener('click', () => {
   const links = document.getElementById('nav-links');
-  links.classList.toggle('open');
+  const toggle = document.getElementById('nav-toggle');
+  const isOpen = links.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 });
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'));
+  a.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('nav-toggle').classList.remove('open');
+  });
 });
