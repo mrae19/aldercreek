@@ -27,7 +27,7 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'Alder Creek Website <onboarding@resend.dev>',
-        to: ['matt@mattrae.ca'],
+        to: ['matt+aldercreek@mattraemedia.com'],
         reply_to: email,
         subject: `New message from ${name} — ${interestLabel}`,
         html: `
