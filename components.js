@@ -27,10 +27,7 @@ const NAV = `
 <header class="site-header" id="site-header">
   <nav class="nav-inner">
     <a href="/index.html" class="nav-logo">
-      <span class="logo-text">
-        <span class="logo-top">Alder Creek</span>
-        <span class="logo-bottom"><span class="logo-small">Est</span> Farm <span class="logo-small">1920</span></span>
-      </span>
+      <img src="/assets/logotext.png" alt="Alder Creek Farm" class="nav-logo-img" />
     </a>
     <button class="nav-toggle" aria-label="Open menu" id="nav-toggle">
       <span></span><span></span><span></span>
@@ -49,10 +46,7 @@ const FOOTER = `
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <p class="footer-logo-text">
-          <span class="logo-top">Alder Creek</span>
-          <span class="logo-bottom"><span class="logo-small">Est</span> Farm <span class="logo-small">1920</span></span>
-        </p>
+        <img src="/assets/Alder-Creek-Logo-1536x666.png" alt="Alder Creek Farm" class="footer-logo-img" />
         <p class="footer-tagline">Quality Ontario Lamb.<br>Raised in the heart of the Ottawa Valley.</p>
       </div>
       <div class="footer-nav">
